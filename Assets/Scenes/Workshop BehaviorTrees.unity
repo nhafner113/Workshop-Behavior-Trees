@@ -605,18 +605,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309342655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5d1ae0bd958fe4e9ac8ccf3eabec6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 71c9c7e82db94310b12d20e69514e575, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PizzaDeliveryAgent
+  m_EditorClassIdentifier: Assembly-CSharp::PizzaDeliveryAgent_empty
   isHungry: 0
   hasPizza: 0
   pizzaria: {fileID: 91163770}
   customer: {fileID: 1653654868}
   home: {fileID: 1851115734}
-  rechargechamber: {fileID: 1764333014}
-  energy: 100
-  maxEnergy: 100
-  energyDrainRate: 5
+  RechargeChamber: {fileID: 1764333014}
 --- !u!1 &1492218708
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +754,7 @@ GameObject:
   - component: {fileID: 1653654870}
   - component: {fileID: 1653654869}
   m_Layer: 0
-  m_Name: Client
+  m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
