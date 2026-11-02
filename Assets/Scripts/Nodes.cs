@@ -52,12 +52,21 @@ public class GoHomeToEat : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("<color=red>[Actie] Naar huis gaan om te eten...</color>");
+        if (Vector3.Distance(agent.transform.position,
+                agent.home.position) < 0.5f)
+        {
+            Debug.Log(
+                "<color=red>[Actie] Naar huis gaan om te eten...</color>");
+            agent.MoveTo(agent.home.position);
+
+            // Simuleer dat hij thuis is en heeft gegeten
+            agent.isHungry = false;
+            return NodeState.SUCCESS;
+        }
+        Debug.Log("<color=red>[Action] Onderweg naar huis om te eten </color>");
         agent.MoveTo(agent.home.position);
-        
-        // Simuleer dat hij thuis is en heeft gegeten
-        agent.isHungry = false;
-        return NodeState.SUCCESS;
+        state =  NodeState.RUNNING;
+        return state;
     }
 }
 
@@ -72,11 +81,18 @@ public class PickupPizza : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("<color=cyan>[Actie] Pizza ophalen bij de Pizzeria...</color>");
+        if (Vector3.Distance(agent.transform.position,
+                agent.pizzaria.position) < 0.5f)
+        {
+            Debug.Log(
+                "<color=cyan>[Actie] Pizza ophalen bij de Pizzeria...</color>");
+            agent.hasPizza = true;
+            return NodeState.SUCCESS;
+        }
+        Debug.Log("<color=cyan>[Action] Onderweg naar de pizzaria </color>");
         agent.MoveTo(agent.pizzaria.position);
-        
-        agent.hasPizza = true;
-        return NodeState.SUCCESS;
+        state =  NodeState.RUNNING;
+        return state;
     }
 }
 
@@ -91,10 +107,18 @@ public class DeliverPizza : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("<color=green>[Actie] Pizza bezorgen bij het juiste adres!</color>");
+        if (Vector3.Distance(agent.transform.position,
+                agent.customer.position) < 0.5f)
+        {
+            Debug.Log(
+                "<color=green>[Actie] Pizza bezorgen bij het juiste adres!</color>");
+            agent.hasPizza = false;
+            agent.MoveTo(agent.customer.position);
+            return NodeState.SUCCESS;
+        }
+        Debug.Log("<color=green>[Action] Onderweg naar klant </color>");
         agent.MoveTo(agent.customer.position);
-        
-        agent.hasPizza = false;
-        return NodeState.SUCCESS;
+        state =  NodeState.RUNNING;
+        return state;
     }
 }

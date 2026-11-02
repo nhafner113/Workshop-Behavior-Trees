@@ -46,7 +46,7 @@ public class PizzaDeliveryAgent : MonoBehaviour
         topNode = new Selector(new List<Node>
         {
             eatSequence,
-            deliverAction,
+            deliverSequence,
             pickupAction,
         });
     }
