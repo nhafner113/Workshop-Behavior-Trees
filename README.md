@@ -7,7 +7,7 @@ When the agent's energy drops below **25%**, They must stop their current task a
 ### What you need to do
 
 ### 1. In 'PizzaDeliveryAgent.cs' 
-* Add veriables for current energy, maximum energy, and drain rate.
+* Add variables for current energy, maximum energy, and drain rate.
 * Update the 'Update()' loop so that the energy gradually decreases over time.
 
 ### 2. The condition Node: 'CheckEnergy'
