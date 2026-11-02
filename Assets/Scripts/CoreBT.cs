@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 // basis systeem
-// Bevat de NodeState enum (running, succes, failure 
+// Bevat de NodeState enum (running, succes, failure) 
 // bevat abstracte Node klasse waar alle andere Nodes van overerven.
 
 

@@ -53,7 +53,9 @@ public class PizzaDeliveryAgent : MonoBehaviour
 
     public void MoveTo(Vector3 targetPosition)
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5f);
+        // Only y-as
+        Vector3 target = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * 5f);
     }
 
 }

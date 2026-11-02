@@ -53,7 +53,7 @@ public class GoHomeToEat : Node
     public override NodeState Evaluate()
     {
         if (Vector3.Distance(agent.transform.position,
-                agent.home.position) < 0.5f)
+                agent.home.position) < 3.5f)
         {
             Debug.Log(
                 "<color=red>[Actie] Naar huis gaan om te eten...</color>");
@@ -82,7 +82,7 @@ public class PickupPizza : Node
     public override NodeState Evaluate()
     {
         if (Vector3.Distance(agent.transform.position,
-                agent.pizzaria.position) < 0.5f)
+                agent.pizzaria.position) < 3.5f)
         {
             Debug.Log(
                 "<color=cyan>[Actie] Pizza ophalen bij de Pizzeria...</color>");
@@ -108,7 +108,7 @@ public class DeliverPizza : Node
     public override NodeState Evaluate()
     {
         if (Vector3.Distance(agent.transform.position,
-                agent.customer.position) < 0.5f)
+                agent.customer.position) < 2.5f)
         {
             Debug.Log(
                 "<color=green>[Actie] Pizza bezorgen bij het juiste adres!</color>");
