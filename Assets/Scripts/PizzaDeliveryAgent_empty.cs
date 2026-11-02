@@ -12,6 +12,7 @@ public class PizzaDeliveryAgent_empty : MonoBehaviour
     public Transform pizzaria;
     public Transform customer;
     public Transform home;
+    public Transform RechargeChamber;
 
     void Start()
     {
