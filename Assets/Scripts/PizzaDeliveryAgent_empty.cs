@@ -29,16 +29,6 @@ public class PizzaDeliveryAgent_empty : MonoBehaviour
 
     void ConstructBehavioTree()
     {
-        // Branch 1: Als de bezorger honger heeft --> Ga naar huis om te eten.
-     
-        
-        // Branch 2: Als hij al een pizza heeft --> Bezorg hem bij de klant.
-        
-        
-        // Branch 3: Anders --> Haal een pizza op bij de Pizzaria
-       
-        
-        // Selector building
        
     }
 
