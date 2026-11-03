@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 
-// Bevat de logisch nodes die meerdere children kunnen aansturen.
-// selector: voert children uit tot eentje slaagt
-// Sequence: voert children stuk voor stuk uit zolang ze slagen, faalt --> stop
 
 
 public class Selector : Node

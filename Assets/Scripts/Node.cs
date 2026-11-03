@@ -17,7 +17,7 @@ public class CheckHunger : Node
     {
         if (agent.isHungry)
         {
-            Debug.Log("<color=orange>[Conditie] Delivery Agent is hungry</color>");
+            Debug.Log("<color=orange>[Condition] Delivery Agent is hungry</color>");
             return NodeState.SUCCESS;
         }
         return NodeState.FAILURE;
@@ -56,14 +56,14 @@ public class GoHomeToEat : Node
                 agent.home.position) < 3.5f)
         {
             Debug.Log(
-                "<color=red>[Actie] Naar huis gaan om te eten...</color>");
+                "<color=red>[Action] Going home to eat </color>");
             agent.MoveTo(agent.home.position);
 
             // Simuleer dat hij thuis is en heeft gegeten
             agent.isHungry = false;
             return NodeState.SUCCESS;
         }
-        Debug.Log("<color=red>[Action] Onderweg naar huis om te eten </color>");
+        Debug.Log("<color=red>[Action] On my way home to eat </color>");
         agent.MoveTo(agent.home.position);
         state =  NodeState.RUNNING;
         return state;
@@ -85,11 +85,11 @@ public class PickupPizza : Node
                 agent.pizzaria.position) < 3.5f)
         {
             Debug.Log(
-                "<color=cyan>[Actie] Pizza ophalen bij de Pizzeria...</color>");
+                "<color=cyan>[Action] Pickup pizza from pizzaria </color>");
             agent.hasPizza = true;
             return NodeState.SUCCESS;
         }
-        Debug.Log("<color=cyan>[Action] Onderweg naar de pizzaria </color>");
+        Debug.Log("<color=cyan>[Action] Going to the pizzaria </color>");
         agent.MoveTo(agent.pizzaria.position);
         state =  NodeState.RUNNING;
         return state;
@@ -111,12 +111,12 @@ public class DeliverPizza : Node
                 agent.customer.position) < 2.5f)
         {
             Debug.Log(
-                "<color=green>[Actie] Pizza bezorgen bij het juiste adres!</color>");
+                "<color=green>[Action] Deliver pizza to the addres </color>");
             agent.hasPizza = false;
             agent.MoveTo(agent.customer.position);
             return NodeState.SUCCESS;
         }
-        Debug.Log("<color=green>[Action] Onderweg naar klant </color>");
+        Debug.Log("<color=green>[Action] On my way to customer </color>");
         agent.MoveTo(agent.customer.position);
         state =  NodeState.RUNNING;
         return state;
@@ -158,11 +158,11 @@ public class RechargeEnergy : Node
             agent.rechargechamber.position);
         if (distance < 4.0f)
         {
-            Debug.Log("<color=yellow>[Action] Fully Charged! Energy is 100%</color>");
+            Debug.Log("<color=yellow>[Action] Fully Charged! Energy is 100% </color>");
             agent.energy = agent.maxEnergy;
             return NodeState.SUCCESS;
         }
-        Debug.Log("<color=yellow>[Actie] Op weg naar oplaadstation...</color>");
+        Debug.Log("<color=yellow>[Actie] On my way to recharge chamber </color>");
         agent.MoveTo(agent.rechargechamber.position);
         state = NodeState.RUNNING;
         return state;
